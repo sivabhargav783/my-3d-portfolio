@@ -5,7 +5,6 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-// only initialize if key exists (prevents build crash)
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
@@ -15,22 +14,26 @@ const Email = z.object({
   message: z.string().min(10, "Message is too short!"),
 });
 
-export async function POST(req) {
+export async function POST(req: Request): Promise<Response> {
   try {
     const body = await req.json();
 
     const { success, data, error } = Email.safeParse(body);
     if (!success) {
-      return Response.json({ error: error?.message }, { status: 400 });
+      return new Response(JSON.stringify({ error: error?.message }), {
+        status: 400,
+      });
     }
 
-    // if resend is disabled, just return success
     if (!resend) {
       console.warn("RESEND_API_KEY not found — skipping email send.");
-      return Response.json({
-        success: true,
-        message: "Email sending is disabled in this deployment.",
-      });
+      return new Response(
+        JSON.stringify({
+          success: true,
+          message: "Email sending is disabled in this deployment.",
+        }),
+        { status: 200 }
+      );
     }
 
     const { data: resendData, error: resendError } = await resend.emails.send({
@@ -45,12 +48,16 @@ export async function POST(req) {
     });
 
     if (resendError) {
-      return Response.json({ error: resendError }, { status: 500 });
+      return new Response(JSON.stringify({ error: resendError }), {
+        status: 500,
+      });
     }
 
-    return Response.json(resendData);
+    return new Response(JSON.stringify(resendData), { status: 200 });
   } catch (err) {
     console.error("API send error:", err);
-    return Response.json({ error: "Server error" }, { status: 500 });
+    return new Response(JSON.stringify({ error: "Server error" }), {
+      status: 500,
+    });
   }
 }
