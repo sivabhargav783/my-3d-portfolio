@@ -1022,7 +1022,7 @@ const projects: Project[] = [
     src: "/assets/projects-screenshots/myportfolio/2.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
     live: "https://www.linkedin.com/posts/bachala-siva-bhargav-2936a2260_terraform-aws-amazonwebservices-activity-7311247489490173952-4Vok?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEAsgQ8BC4ZPIaL5gnYe1hMnjonVL_roH2k",
-    github: "https://github.com/SivaBhargav7/HealthcareHub",
+    github: "https://github.com/SivaBhargav7/Healthcare-Hub",
     skills: {
       frontend: [
         PROJECT_SKILLS.terraform,
