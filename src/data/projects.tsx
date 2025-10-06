@@ -1063,7 +1063,7 @@ const projects: Project[] = [
     src: "/assets/projects-screenshots/coffee-shop/1.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
     live: "https://www.linkedin.com/posts/bachala-siva-bhargav-2936a2260_aws-cloudcomputing-serverless-activity-7288873242063249408-0Eve?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEAsgQ8BC4ZPIaL5gnYe1hMnjonVL_roH2k",
-    github: "https://github.com/SivaBhargav7/myrole",
+    github: "https://github.com/SivaBhargav7/Serverless-coffee-shop-order-system",
     skills: {
       frontend: [
         PROJECT_SKILLS.awss3,
