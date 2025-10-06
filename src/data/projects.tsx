@@ -984,7 +984,7 @@ const projects: Project[] = [
     src: "/assets/projects-screenshots/financeme/1.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
     live: "https://www.linkedin.com/posts/bachala-siva-bhargav-2936a2260_kubernetes-aws-devops-activity-7338767753970884609-dI9M?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEAsgQ8BC4ZPIaL5gnYe1hMnjonVL_roH2k",
-    github: "https://github.com/SivaBhargav7/git-testing",
+    github: "https://github.com/SivaBhargav7/Container-Orchestration-using-Kubernetes",
     skills: {
       frontend: [
         PROJECT_SKILLS.awseks,
