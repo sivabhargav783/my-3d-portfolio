@@ -8,7 +8,7 @@ export enum SkillNames {
   GIT = "git",
   DOCKER = "docker",
   SELENIUM = "selenium",  // 
-  // JENKINS = "jenkins",    // +
+  // JENKINS = "jenkins-hello ",    // +
   // KUBERNETES = "kubernetes",  // +
   // ANSIBLE = "ansible",    // +
   // TERRAFORM = "terraform",  // +
